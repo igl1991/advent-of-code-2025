@@ -2,7 +2,7 @@ import type { Sequence, SequenceItem } from "./getPositionsFromSequence";
 import fs from 'node:fs/promises';
 
 export const getSequenceFromInput = async (): Promise<Sequence> => {
-    const fileContent = await fs.readFile('./day01/input.txt');
+    const fileContent = await fs.readFile('./public/day01.txt');
     const stringContent = fileContent.toString();
     const array = Array.from(stringContent.split("\n"))
         .map((item) => {

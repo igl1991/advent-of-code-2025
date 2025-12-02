@@ -1,4 +1,4 @@
-import { turnLeft } from "./turnLeft";
+import { turnLeft } from "../../src/day01/turnLeft";
 
 describe('turnLeft', () => {
     it('should return new position basic', ()=>{

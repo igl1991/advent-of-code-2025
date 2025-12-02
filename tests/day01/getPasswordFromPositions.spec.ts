@@ -1,4 +1,4 @@
-import { getPasswordFromPositions } from "./getPasswordFromPositions";
+import { getPasswordFromPositions } from "../../src/day01/getPasswordFromPositions";
 
 describe('getPasswordFromPositions', () => {
     it('should count correctly', () => {

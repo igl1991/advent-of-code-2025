@@ -2,13 +2,13 @@ import { getPasswordFromPositions } from "./getPasswordFromPositions.ts";
 import { getPositionsFromSequence } from "./getPositionsFromSequence.ts";
 import { getSequenceFromInput } from "./getSequenceFromInput.ts";
 
-
-async function main() {
+export async function day01() {
     const startPosition = 50;
     const sequence = await getSequenceFromInput();
+
+
+    // PART 1
     const positions = getPositionsFromSequence(startPosition, sequence);
     const password = getPasswordFromPositions(positions);
     console.log('Got Password', password);
 }
-
-main().then(() => console.log('done!'))

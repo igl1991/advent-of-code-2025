@@ -1,4 +1,4 @@
-import { getPositionsFromSequence, Sequence } from "./getPositionsFromSequence"
+import { getPositionsFromSequence, Sequence } from "../../src/day01/getPositionsFromSequence"
 
 describe('getPositionsFromSequence', () => {
     it('should be correct for example', () => {
