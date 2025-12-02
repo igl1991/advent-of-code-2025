@@ -1,10 +1,10 @@
-import { turnLeft } from "./turnLeft";
-import { turnRight } from "./turnRight";
+import { turnLeft } from "./turnLeft.ts";
+import { turnRight } from "./turnRight.ts";
 
-export type Sequence =
-    {
-        turn: 'left' | 'right', amount: number
-    }[]
+export type SequenceItem = {
+    turn: 'left' | 'right', amount: number
+};
+export type Sequence = SequenceItem[]
 
 export const getPositionsFromSequence = (
     startPosition: number,
