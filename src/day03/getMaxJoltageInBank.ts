@@ -1,9 +1,16 @@
 
 export type Bank = string;
-export const getMaxJoltageInBank = (bank: Bank): string => {
-    const { maxNumber, pos } = findMaxNumberInString(bank, 0, bank.length - 1);
-    const { maxNumber: secondNumber } = findMaxNumberInString(bank, pos + 1);
-    return String(maxNumber) + String(secondNumber);
+export const getMaxJoltageInBank = (bank: Bank, totalBatteries: number = 2): string => {
+    let output = '';
+    let startPos = 0;
+    for (let batterieIndex = 0; batterieIndex < totalBatteries; batterieIndex++) {
+        const endPos = bank.length - (totalBatteries - batterieIndex - 1);
+        const { maxNumber, pos } = findMaxNumberInString(bank, startPos, endPos);
+        startPos = pos + 1;
+        output += String(maxNumber);
+    }
+
+    return output;
 }
 
 const findMaxNumberInString = (input: string, startPos: number, endPos?: number): { maxNumber: number, pos: number } => {
@@ -11,7 +18,7 @@ const findMaxNumberInString = (input: string, startPos: number, endPos?: number)
     let pos = startPos;
     for (let loopPos = startPos; loopPos < (endPos ?? input.length); loopPos++) {
         const currentChar = Number(input.charAt(loopPos));
-        if (currentChar > maxNumber ) {
+        if (currentChar > maxNumber) {
             maxNumber = currentChar;
             pos = loopPos;
         }
