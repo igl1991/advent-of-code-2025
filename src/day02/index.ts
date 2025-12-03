@@ -1,4 +1,5 @@
 import { getInvalidIdsInRange } from "./getInvalidIdsInRange.ts";
+import { getMoreInvalidIdsInRange } from "./getMoreInvalidIdsInRange.ts";
 import { getRangesFromInput } from "./getRangesFromInput.ts";
 
 export async function day02() {
@@ -13,4 +14,11 @@ export async function day02() {
     console.log('Part 1 - Got Sum', sum);
 
     // PART 2
+    sum = 0;
+    for (const { from, to } of ranges) {
+        const invalidIds = getMoreInvalidIdsInRange(from, to);
+        if (invalidIds.length === 0) continue;
+        sum += invalidIds.reduce((left, right) => left + right);
+    }
+    console.log('Part 2 - Got Sum', sum);
 }
