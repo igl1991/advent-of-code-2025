@@ -1,6 +1,6 @@
-import type { Sequence } from "./getPositionsFromSequence";
-import { turnLeft } from "./turnLeft";
-import { turnRight } from "./turnRight";
+import type { Sequence } from "./getPositionsFromSequence.ts";
+import { turnLeft } from "./turnLeft.ts";
+import { turnRight } from "./turnRight.ts";
 
 export const getPasswordComplicated = (
     startPosition: number,
