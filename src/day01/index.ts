@@ -10,5 +10,5 @@ export async function day01() {
     // PART 1
     const positions = getPositionsFromSequence(startPosition, sequence);
     const password = getPasswordFromPositions(positions);
-    console.log('Got Password', password);
+    console.log('Part 1 - Got Password', password);
 }
