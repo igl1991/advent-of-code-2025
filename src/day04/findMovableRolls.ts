@@ -1,4 +1,4 @@
-import { extractSurrounding } from "./extractSurrounding";
+import { extractSurrounding } from "./extractSurrounding.ts";
 import type { Matrix } from "./types";
 
 export const findMovableRolls = (grid: Matrix) => {
