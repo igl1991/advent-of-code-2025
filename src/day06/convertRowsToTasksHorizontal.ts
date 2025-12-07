@@ -1,16 +1,14 @@
-export type Task = {
-    numbers: number[];
-    operation: 'add' | 'multiply' | null
-}
+import type { Task } from "./types";
 
-export const convertRowsToTasks = (rows: string[]) => {
-    const operationRow = rows.pop()!;
+export const convertRowsToTasksHorizontal = (rows: string[]) => {
+    const localRows = [...rows];
+    const operationRow = localRows.pop()!;
 
-    const taskCount = getNumberEntriesFromRow(rows[0]).length;
+    const taskCount = getNumberEntriesFromRow(localRows[0]).length;
 
     let tasks: Task[] = Array.from({ length: taskCount }, () => ({ numbers: [], operation: null }));
 
-    for (const row of rows) {
+    for (const row of localRows) {
         const items = getNumberEntriesFromRow(row);
         for (const [index, item] of items.entries()) {
             tasks[index].numbers.push(Number(item));

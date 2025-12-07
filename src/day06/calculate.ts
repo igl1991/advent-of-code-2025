@@ -1,4 +1,4 @@
-import type { Task } from "./readRowsFromFile";
+import type { Task } from "./types";
 
 export const calculateOne = (task: Task) => {
     if (task.operation === 'multiply') {
