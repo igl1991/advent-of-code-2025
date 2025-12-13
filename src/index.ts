@@ -4,6 +4,7 @@ import { day03 } from "./day03/index.ts";
 import { day04 } from "./day04/index.ts";
 import { day05 } from "./day05/index.ts";
 import { day06 } from "./day06/index.ts";
+import { day10 } from "./day10/index.ts";
 
 const day = process.argv[2];
 if (!day.startsWith('day')) {
@@ -33,4 +34,7 @@ switch (day) {
 
     case 'day06':
         day06();
+
+    case 'day10':
+        day10();
 }
