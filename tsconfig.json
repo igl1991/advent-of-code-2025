@@ -13,6 +13,7 @@
     "paths": {
       "*": ["node_modules/*"]        // Help TypeScript find modules
     },
+    "sourceMap": true,
     "allowImportingTsExtensions": true
   },
   "include": ["src/**/*"],           // Include all files in the src directory
