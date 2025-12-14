@@ -1,8 +1,6 @@
-// import { getDiff } from "./getDiff";
-// import { isResultOk } from "./isResultOk";
-import { getPossibleNextButtons } from "./getPossibleNextButtons";
-import { pushButton } from "./pushButton";
-import type { Button, ButtonWithId, Machine } from "./types";
+import { getPossibleNextButtons } from "./getPossibleNextButtons.ts";
+import { pushButton } from "./pushButton.ts";
+import type { ButtonWithId, Machine } from "./types";
 
 type Combination = {
     buttons: ButtonWithId[],

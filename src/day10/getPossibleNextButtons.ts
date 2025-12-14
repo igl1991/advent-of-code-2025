@@ -1,6 +1,6 @@
-import { getDiff } from "./getDiff";
-import { pushButton } from "./pushButton";
-import type { Machine, Button, ButtonWithId } from "./types";
+import { getDiff } from "./getDiff.ts";
+import { pushButton } from "./pushButton.ts";
+import type { Machine, ButtonWithId } from "./types";
 
 type PossibleButton = {
     button: ButtonWithId;
