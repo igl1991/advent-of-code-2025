@@ -7,7 +7,7 @@ import { day06 } from "./day06/index.ts";
 import { day10 } from "./day10/index.ts";
 
 const day = process.argv[2];
-if (!day.startsWith('day')) {
+if (!day || !day.startsWith('day')) {
     console.error('Add the day argument with e.g. -- day01')
 }
 
