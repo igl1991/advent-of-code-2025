@@ -1,33 +1,31 @@
 import { getDiff } from "./getDiff";
 import { pushButton } from "./pushButton";
-import type { Machine, Button } from "./types";
+import type { Machine, Button, ButtonWithId } from "./types";
 
 type PossibleButton = {
-    button: Button;
-    index: number;
+    button: ButtonWithId;
     diff: number;
 }
 
 export function getPossibleNextButtons(
     currentLights: boolean[],
     goal: Machine['indicatorLightsOn'],
-    buttons: Button[]
+    buttons: ButtonWithId[]
 ) {
     const currentDiff = getDiff(currentLights, goal);
 
     const possibleButtons: PossibleButton[] = [];
 
-    for (const [index, button] of buttons.entries()) {
-        const diff = getDiff(pushButton(button, currentLights), goal);
+    for (const button of buttons) {
+        const diff = getDiff(pushButton(button.button, currentLights), goal);
 
-        if (diff > currentDiff) continue
+        // if (diff > currentDiff) continue
 
         possibleButtons.push({
             button,
-            index,
             diff,
         })
     }
 
-    return possibleButtons;
+    return possibleButtons.sort((left, right) => left.diff < right.diff ? -1 : 1);
 }
