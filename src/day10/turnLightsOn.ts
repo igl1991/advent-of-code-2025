@@ -48,6 +48,9 @@ export function turnLightsOn(machine: Machine) {
         ]
 
         index++;
+        if (combinations.length >= 12) {
+            throw new Error('Ups, endless loop?')
+        }
     } while (index < currentCombis.length)
 
     throw new Error('No Match found');
